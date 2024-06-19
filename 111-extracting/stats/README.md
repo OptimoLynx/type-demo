@@ -1,2 +1,4 @@
-# npm install nodemon concurrently
-# npm run start
+npm install nodemon concurrently
+
+# Run to start
+npm start
