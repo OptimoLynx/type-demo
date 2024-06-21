@@ -1,0 +1,34 @@
+// https://stephengrider.github.io/playgrounds/
+
+const rectangular = (state) => {
+	return {
+    area: () => {
+    return state.height * state.width;
+   }
+  };
+};
+
+const openable = (state) => {
+ return {
+  toggleOpen: () => {
+   state.open = !state.open 
+  }
+ };
+};
+
+
+const buildRectangelWindow = (state) => {
+ return Object.assign(state, rectangular(state), openable(state)); 
+};
+
+
+const rectangleWindow = buildRectangelWindow({
+  height: 20,
+  width: 20,
+  open: false
+});
+
+
+rectangleWindow.open
+rectangleWindow.toggleOpen();
+rectangleWindow.open
