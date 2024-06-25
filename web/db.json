@@ -2,27 +2,7 @@
   "users": [
     {
       "id": "1",
-      "name": "dev",
-      "age": 20
-    },
-    {
-      "id": "2",
-      "name": "dev",
-      "age": 20
-    },
-    {
-      "id": "3",
-      "name": "dev",
-      "age": 20
-    },
-    {
-      "id": "4",
-      "name": "dev",
-      "age": 20
-    },
-    {
-      "id": "5",
-      "name": "dev",
+      "name": "john",
       "age": 21
     }
   ]
