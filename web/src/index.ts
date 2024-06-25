@@ -1,21 +1,10 @@
-import { User } from './models/User';
+import {User} from './models/User';
 
-const user = new User({ name: 'dev', age: 20 });
+const user = new User({ id: 1 });
 
-// user.set({ age: 34 });
+user.fetch();
 
-// console.log(user.get('name'));
-// console.log(user.get('age'));
+setTimeout(() => {
+    console.log(user);
+}, 4000);
 
-user.on('change', () => {
-    console.log("Change #1")
-});
-user.on('change', () => {
-    console.log("Change #2")
-});
-user.on('save', () => {
-    console.log("Save was triggered")
-});
-
-// console.log(user);
-user.trigger('save');
