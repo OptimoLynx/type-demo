@@ -16,3 +16,6 @@ OR
 // npm i
 npm run start:db
 npm run start:parcel
+
+// create tsconfig.json file
+tsc --init
