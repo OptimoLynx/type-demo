@@ -14,10 +14,10 @@ const rootURL = 'http://localhost:3000/users';
 export class User {
   public events: Eventing = new Eventing();
   public sync: Sync<UserProps> = new Sync<UserProps>(rootURL);
-  public attributes: Attributes<UserProps>;
+  public attr: Attributes<UserProps>;
 
   constructor(attrs: UserProps) {
-    this.attributes = new Attributes<UserProps>(attrs);
+    this.attr = new Attributes<UserProps>(attrs);
   }
 
   get on() {
@@ -29,11 +29,11 @@ export class User {
   }
 
   get get() {
-    return this.attributes.get;
+    return this.attr.get;
   }
 
   set(update: UserProps): void {
-    this.attributes.set(update);
+    this.attr.set(update);
     this.events.trigger('change');
   }
 
@@ -47,6 +47,16 @@ export class User {
     this.sync.fetch(id).then(
       (response: AxiosResponse): void => {
         this.set(response.data);
+    });
+  }
+
+  save(): void {
+    this.sync.save(this.attr.getAll())
+    .then((response: AxiosResponse): void => {
+      this.trigger('save');
+    })
+    .catch(() => {
+      this.trigger('error');
     });
   }
 }

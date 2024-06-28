@@ -22,5 +22,6 @@ export class Sync<T extends HasId> {
       return axios.post(this.rootURL, data);
     }
   }
+
 }
 
