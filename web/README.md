@@ -19,3 +19,6 @@ npm run start:parcel
 
 // create tsconfig.json file
 tsc --init
+
+// Error: Expected content key de1e4a02ec63c4eb to exist ?
+// Delete folder .parcel-cache
