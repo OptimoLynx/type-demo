@@ -1,14 +1,12 @@
-import {User} from './models/User';
+//import axios, { AxiosResponse } from "axios";
+import { Collection } from "./models/Collection";
 
-const user = User.buildUser({ id: 1 });
+/* axios.get("http://localhost:3000/users").then((response: AxiosResponse) => {
+  console.log(response.data);
+}); */
 
-// console.log(user.get('name'));
+const collection = new Collection('http://localhost:3000/users');
 
-user.on('save', () => {
-    console.log(user);
-});
+collection.fetch();
 
-// user.set({ name: 'New name'});
-user.fetch();
 
-// user.save();
