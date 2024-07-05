@@ -68,3 +68,4 @@ export class Model<T extends HasId> {
       });
   }
 }
+
