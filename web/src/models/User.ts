@@ -21,14 +21,6 @@ export class User extends Model<UserProps> {
     );
   }
 
-/*   static buildLocalUser(attrs: UserProps): User {
-    return new User(
-      new Attributes<UserProps>(attrs),
-      new Eventing(),
-      new ApiSync<UserProps>(rootURL)
-    );
-  } */
-
   static buildUserCollection(): Collection<User, UserProps> {
     return new Collection<User, UserProps>(
       rootURL,
