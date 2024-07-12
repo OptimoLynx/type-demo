@@ -1,4 +1,3 @@
-import { User } from "../models/User";
 import { Model, HasId } from "../models/Model";
 
 export abstract class View<T extends Model<K>, K extends HasId> {
@@ -10,7 +9,7 @@ export abstract class View<T extends Model<K>, K extends HasId> {
 
   abstract template(): string;
 
-  regionsMaps(): { [key: string]: () => void } {
+  regionsMaps(): { [key: string]: string } {
     return {};
   }
 
@@ -42,21 +41,26 @@ export abstract class View<T extends Model<K>, K extends HasId> {
     for (let key in regionsMaps) {
       const selector = regionsMaps[key];
       const element = fragment.querySelector(selector);
-      
+
       if (element) {
         this.regions[key] = element;
       }
     }
   }
 
+  onRender(): void {}
+
   render(): void {
     // clear parent element & replace with newly render template
-    this.parent.innerHTML = "";
+    this.parent.innerHTML = '';
 
-    const templateElement = document.createElement("template");
+    const templateElement = document.createElement('template');
     templateElement.innerHTML = this.template();
 
     this.bindEvents(templateElement.content);
+    this.mapRegions(templateElement.content);
+
+    this.onRender();
 
     this.parent.append(templateElement.content);
   }
