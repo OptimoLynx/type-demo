@@ -40,10 +40,7 @@ router.post("/login", (req: RequestWithBody, res: Response) => {
     email === "hallo@hi.com" &&
     password === "password"
   ) {
-    // mark this person as loggen in
     req.session = { loggedIn: true };
-
-    // redirect them to the root route
     res.redirect("/");
   } else {
     res.send("Invalid email or password.");
