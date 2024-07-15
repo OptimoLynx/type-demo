@@ -12,3 +12,7 @@ npm install @types/express @types/cookie-session @types/body-parser
 
 #5. Run
 npm start
+
+#6. test on brower 
+http://localhost:3000/
+
