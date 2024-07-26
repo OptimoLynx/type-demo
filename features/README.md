@@ -7,3 +7,8 @@ ts-node -v
 
 #3. run decorators with npx
 npx ts-node decorators.ts
+
+#4. configure metadata
+npm init -y
+npm install reflect-metadata
+npx ts-node metadata.ts
