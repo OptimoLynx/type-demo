@@ -9,12 +9,7 @@ const el = document.getElementById("root");
 
 const root = ReactDOM.createRoot(el!);
 
-// Function components
-// JSX.Element = retrun type annotation
-const App = (props: AppProps): JSX.Element => {
-  return <div>{props.color}</div>
-}
-/* class App extends React.Component<AppProps> {
+class App extends React.Component<AppProps> {
   state = { counter: 0 };
 
   onIncrement = (): void => {
@@ -41,6 +36,6 @@ const App = (props: AppProps): JSX.Element => {
       </>
     );
   }
-} */
+}
 
-root.render(<App color="red"/>);
+root.render(<App />);
