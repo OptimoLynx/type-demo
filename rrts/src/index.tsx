@@ -15,4 +15,3 @@ ReactDOM.render(
   document.querySelector("#root")
 );
 
-ReactDOM.render(<App />, document.querySelector("#root"));
