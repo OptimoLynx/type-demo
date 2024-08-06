@@ -49,3 +49,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Install redux and axios
 npm install redux@4 react-redux@8 redux-thunk@2 axios
+
+# Find jsonplaceholder and /users/todos
+https://jsonplaceholder.typicode.com/guide/
